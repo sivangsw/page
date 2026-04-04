@@ -6,6 +6,7 @@ PROJECT_SUMMARY.md
 QUICK_START.md
 WEBSITE_GUIDE.md
 DEPLOYMENT_CHECKLIST.md
+example/
 
 # System files
 .DS_Store
