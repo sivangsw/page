@@ -1,0 +1,21 @@
+# Reference files - not needed for deployment
+ליאת כהן*
+*.tmp
+
+# Development files
+prompt
+prompt_clean.txt
+FILE_INDEX.md
+PROJECT_SUMMARY.md
+QUICK_START.md
+WEBSITE_GUIDE.md
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp

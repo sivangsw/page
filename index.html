@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>סיון גילאור - עובדת סוציאלית | פתרונות סיעוד וטיפול</title>
+    <meta name="description"
+        content="סיון גילאור - עובדת סוציאלית מקצועית בתחום פתרונות הסיעוד. ניסיון עמוק בטיפול וליווי משפחות בתהליך הטיפולי.">
+    <meta name="keywords" content="סיעוד, טיפול, עובדת סוציאלית, סיון, ליווי משפחות">
+    <meta property="og:title" content="סיון גילאור - עובדת סוציאלית | פתרונות סיעוד וטיפול">
+    <meta property="og:description"
+        content="סיון גילאור - עובדת סוציאלית מקצועית בתחום פתרונות הסיעוד. ניסיון עמוק בטיפול וליווי משפחות בתהליך הטיפולי.">
+    <meta property="og:type" content="website">
+    <meta name="author" content="סיון גילאור">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Heebo', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 50%, #34495e 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #e67e22;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .services {
+            background-color: #f8f8f8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #7f8c8d;
+            line-height: 1.7;
+        }
+
+        .experience {
+            background-color: white;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item h4 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .role {
+            color: #f39c12;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .experience-item p {
+            color: #7f8c8d;
+            line-height: 1.7;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: #f39c12;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #ffffff;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-form button {
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e67e22;
+        }
+
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">סיון גילאור</div>
+            <ul>
+                <li><a href="#home">בעמוד הבית</a></li>
+                <li><a href="#about">עלי</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#experience">ניסיון</a></li>
+                <li><a href="#contact">יצירת קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>סיון גילאור</h1>
+        <p>עובדת סוציאלית מקצועית בתחום פתרונות הסיעוד וליווי משפחות בתהליך הטיפולי</p>
+        <a href="#contact" class="cta-button">צור קשר עכשיו</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">אודות</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>אני סיון - עובדת סוציאלית</h3>
+                    <p>
+                        בעלת ניסיון עמוק וגובה בתחום פתרונות הסיעוד וליווי משפחות בתהליך הטיפולי.
+                        אני מספקת ליווי מקצועי ותמיכה רחבה למשפחות שמתחילות בנתיבי הטיפול.
+                    </p>
+                    <p>
+                        התפקיד שלי הוא לשמש כגשר בין המשפחה לבין המערכת הרפואית, תוך הערכה מעמיקה של צרכי הטיפול
+                        ותכנון אישי ללא פשרויות, המותאם בדיוק לצורכי כל משפחה.
+                    </p>
+                    <p>
+                        אני מאמינה שלכל מישהו זכות לטיפול איכותי וההנעה הנכונה בדרך הטיפולית.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div
+                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 400px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
+                        סיון גילאור - עובדת סוציאלית
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">השירותים שלי</h2>
+            <p class="section-subtitle">אני מספקת מגוון שירותים בתחום הסיעוד וליווי משפחות</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>ערכה ותכנון טיפול</h3>
+                    <p>
+                        הערכה מעמיקה של צרכי המטופל ותכנון מותאם אישית של מסלול הטיפול על פי צורכי המשפחה.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>ליווי משפחות בתהליך</h3>
+                    <p>
+                        ליווי קרוב ותמיכה נפשית למשפחה בכל שלבי התהליך הטיפולי, מהבחירה הראשונית ועד למימוש.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>קואורדינציה של שירותים</h3>
+                    <p>
+                        תיאום והנעת כל האופציות והשירותים הנכונים לטיפול איכותי, תוך הקשה על איתור וקשירת הפתילים.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>ייעוץ מקצועי</h3>
+                    <p>
+                        ייעוץ פרקטי וחוויתי בנושאי סיעוד, טיפול ובחירת מוסדות ושירותים מתאימים.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>ליווי קרוב</h3>
+                    <p>
+                        נוכחות ותמיכה לא מיידית אך משמעותית, כדי להבטיח רצף וטיפול מתמשך באיכות גבוהה.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>יחסי ציבור עם מוסדות</h3>
+                    <p>
+                        הקשה פרודוקטיבית עם מוסדות טיפול, מוספים בריאות וגופים ממשלתיים לטובת המטופל.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">ניסיון מקצועי</h2>
+
+            <div class="experience-item">
+                <h4>עובדת סוציאלית בכיר</h4>
+                <div class="role">מומחה בטיפול וסיעוד</div>
+                <p>
+                    ניסיון של שנים רבות בליווי משפחות בתהליך הטיפול, מהערכה ראשונית דרך תכנון וביצוע השירותים.
+                    מומחיות בשיתוף פעולה עם מוסדות ובניית תוכניות טיפול מותאמות אישית.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h4>קואורדינטורית שירותים רפואיים</h4>
+                <div class="role">ניסיון בניהול מקרים</div>
+                <p>
+                    קואורדינציה של שירותים רפואיים שונים, תיאום בין מוסדות שונים ובניית רשת תמיכה קומפרהנסיבית.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h4>ייעוצת משפחות</h4>
+                <div class="role">יעוץ וליווי</div>
+                <p>
+                    ייעוץ ישיר למשפחות בשאלות טיפול, בחירת מוסדות ותמיכה רגשית בתהליכים קשים ומעוררי קוים.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">יצירת קשר</h2>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>פרטי התקשרות</h3>
+                    <p>
+                        <strong>שם:</strong> סיון גילאור<br>
+                        <strong>תפקיד:</strong> עובדת סוציאלית<br>
+                        <strong>תחום התמחות:</strong> סיעוד וליווי משפחות
+                    </p>
+                    <p>
+                        <strong>טלפון:</strong>
+                        <a href="tel:+972123456789">+972-12-3456789</a>
+                    </p>
+                    <p>
+                        <strong>דוא"ל:</strong>
+                        <a href="mailto:sivan@email.com">sivan@email.com</a>
+                    </p>
+                    <p>
+                        <strong>זמינות:</strong> ימים א'-ה' בין השעות 09:00-17:00
+                    </p>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="שם מלא" required>
+                    <input type="email" placeholder="כתובת דוא״ל" required>
+                    <input type="tel" placeholder="מספר טלפון">
+                    <textarea rows="5" placeholder="הודעה"></textarea>
+                    <button type="submit">שלח הודעה</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 סיון גילאור - עובדת סוציאלית. כל הזכויות שמורות.</p>
+        <p>בנוי בחסד ובמקצועיות למען משפחות שלנו</p>
+    </footer>
+</body>
+
+</html>
