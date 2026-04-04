@@ -151,7 +151,7 @@ prompt*           - Development prompt files
 - ✅ Website stands independently
 - ✅ No external dependencies or references retained
 
-**All Sivan Giliaur content: VERIFIED**
+**All Sivan Gilor content: VERIFIED**
 - ✅ Professional identity
 - ✅ Service descriptions
 - ✅ Experience sections

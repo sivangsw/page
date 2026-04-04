@@ -1,6 +1,6 @@
 # סיון גילאור - עובדת סוציאלית
 
-Professional website for Sivan Giliaur, a social worker specializing in nursing care solutions and family guidance.
+Professional website for Sivan Gilor, a social worker specializing in nursing care solutions and family guidance.
 
 🌐 **[View Live Site](https://sivangsw.github.io/page/)**
 
