@@ -1,14 +1,11 @@
-# Reference files - not needed for deployment
-ליאת כהן*
-*.tmp
-
-# Development files
+# Development files - not for deployment
 prompt
 prompt_clean.txt
 FILE_INDEX.md
 PROJECT_SUMMARY.md
 QUICK_START.md
 WEBSITE_GUIDE.md
+DEPLOYMENT_CHECKLIST.md
 
 # System files
 .DS_Store
