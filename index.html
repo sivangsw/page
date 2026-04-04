@@ -493,11 +493,11 @@
                     </p>
                 </div>
 
-                <form class="contact-form">
-                    <input type="text" placeholder="שם מלא" required>
-                    <input type="email" placeholder="כתובת דוא״ל" required>
-                    <input type="tel" placeholder="מספר טלפון">
-                    <textarea rows="5" placeholder="הודעה"></textarea>
+                <form class="contact-form" action="mailto:sivangsw@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="שם מלא" required>
+                    <input type="email" name="email" placeholder="כתובת דוא״ל" required>
+                    <input type="tel" name="phone" placeholder="מספר טלפון">
+                    <textarea rows="5" name="message" placeholder="הודעה"></textarea>
                     <button type="submit">שלח הודעה</button>
                 </form>
             </div>
