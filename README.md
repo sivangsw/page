@@ -2,7 +2,7 @@
 
 Professional website for Sivan Giliaur, a social worker specializing in nursing care solutions and family guidance.
 
-🌐 **[View Live Site](https://your-username.github.io/page/)**
+🌐 **[View Live Site](https://sivangsw.github.io/page/)**
 
 ## About
 
@@ -40,7 +40,7 @@ This is a single-page responsive website built with HTML5 and CSS3, optimized fo
 1. Push changes to your repository
 2. Go to repository Settings → Pages
 3. Set source to `main` branch
-4. Site will be live at `https://your-username.github.io/repo-name/`
+4. Site will be live at `https://sivangsw.github.io/page/`
 
 ## Customization
 
@@ -51,7 +51,7 @@ Find and replace within the appropriate section:
 - **Name**: Search for "סיון גילאור"
 - **Services**: Update service titles and descriptions
 - **Experience**: Add your professional background
-- **Contact**: Update phone, email, availability
+- **Contact**: Phone, email, Instagram, and Facebook links
 
 ### Modify Colors
 Edit hex color values in the `<style>` section:
