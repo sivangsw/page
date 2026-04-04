@@ -16,13 +16,16 @@ This is a single-page responsive website built with HTML5 and CSS3, optimized fo
 - ✅ SEO optimized with meta tags
 - ✅ Fast loading and GitHub Pages optimized
 - ✅ Professional, modern design
+- ✅ Contact buttons row with phone, email, WhatsApp, Instagram, Facebook
+- ✅ Profile image as hero background
+- ✅ Increased font sizes for better readability
 
 ## Website Sections
 
 | Section | Description |
 |---------|-------------|
 | **Header** | Navigation menu with sticky positioning |
-| **Hero** | Professional introduction and call-to-action |
+| **Hero** | Professional introduction with profile image background and contact buttons |
 | **About** | Personal background and professional expertise |
 | **Services** | 6 core services offered |
 | **Experience** | Professional credentials and experience |
@@ -77,9 +80,10 @@ Edit hex color values in the `<style>` section:
 ## File Structure
 
 ```
-index.html    - Complete website (all HTML + CSS)
-README.md     - This documentation
-.gitignore    - Git ignore rules
+index.html          - Complete website (HTML + CSS)
+sivan-profile.jpg   - Professional profile image
+README.md           - This documentation
+.gitignore          - Git ignore rules
 ```
 
 ## Contributing
@@ -93,7 +97,7 @@ To update or improve the website:
 
 ## License
 
-© 2024 סיון גילאור - All rights reserved.
+© 2026 סיון גילאור - All rights reserved.
 
 ---
 
