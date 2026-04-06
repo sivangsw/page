@@ -35,12 +35,17 @@ nav {
     font-size: 28px;
     font-weight: bold;
     letter-spacing: 1px;
+    flex: 1;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: none;
     gap: 30px;
+}
+
+nav ul.active {
+    display: flex;
 }
 
 nav a {
@@ -397,7 +402,7 @@ footer {
 
 /* Hamburger Menu */
 .hamburger {
-    display: none;
+    display: flex;
     background: none;
     border: none;
     cursor: pointer;
