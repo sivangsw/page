@@ -14,388 +14,7 @@
         content="סיון גילאור - עובדת סוציאלית מקצועית בתחום פתרונות הסיעוד. ניסיון עמוק בטיפול וליווי משפחות בתהליך הטיפולי.">
     <meta property="og:type" content="website">
     <meta name="author" content="סיון גילאור">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Heebo', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f8f8;
-            font-size: 18px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 18px;
-        }
-
-        nav a:hover {
-            color: #f39c12;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(30, 58, 95, 0.8), rgba(30, 58, 95, 0.8)), url('sivan-profile.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-content {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .hero-text {
-            color: #2c3e50;
-        }
-
-        .hero-text h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        .hero .cta-button {
-            background-color: #2c3e50;
-            border: 2px solid #2c3e50;
-        }
-
-        .hero .cta-button:hover {
-            background-color: #34495e;
-            border-color: #34495e;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 22px;
-            margin-bottom: 30px;
-            max-width: 600px;
-            line-height: 1.8;
-        }
-
-        .hero .cta-button {
-            display: inline-block;
-            background-color: #f39c12;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            font-weight: 600;
-        }
-
-        .hero .cta-button:hover {
-            background-color: #e67e22;
-        }
-
-        .contact-buttons {
-            background-color: #f8f8f8;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .buttons-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            min-width: 120px;
-        }
-
-        .contact-btn:hover {
-            background-color: #34495e;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 50px;
-            color: #2c3e50;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 20px;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-        }
-
-        .about {
-            background-color: white;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-text h3 {
-            font-size: 28px;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        .services {
-            background-color: #f8f8f8;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-card h3 {
-            font-size: 22px;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .service-card p {
-            color: #7f8c8d;
-            line-height: 1.7;
-        }
-
-        .experience {
-            background-color: white;
-        }
-
-        .experience-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #ecf0f1;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .experience-item h4 {
-            color: #2c3e50;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .experience-item .role {
-            color: #f39c12;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .experience-item p {
-            color: #7f8c8d;
-            line-height: 1.7;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .contact-info a {
-            color: #f39c12;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: #ffffff;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-form button {
-            background-color: #f39c12;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .contact-form button:hover {
-            background-color: #e67e22;
-        }
-
-        footer {
-            background-color: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 16px;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .hero-content {
-                padding: 30px 20px;
-                max-width: 90%;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .buttons-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-btn {
-                width: 200px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -439,25 +58,24 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">אודות</h2>
+            <h2 class="section-title slide-up">אודות</h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text slide-up">
                     <h3>סיון גילאור - עובדת סוציאלית מומחית</h3>
                     <p>
-                        בעלת ניסיון מקצועי עשיר בתחום הסיעוד והליווי המשפחתי, מתמחה בפתרונות טיפוליים מותאמים אישית.
-                        אני מלווה משפחות לאורך כל המסע הטיפולי - מהשלב הראשוני של ההערכה ועד למימוש מלא של הפתרון
-                        הטיפולי.
+                        היי אני סיון גילאור, עובדת סוציאלית בשבילכם ובשבילם❤️
                     </p>
                     <p>
-                        התפקיד שלי הוא ליצור גשר מקצועי בין המשפחה לבין המערכת הרפואית והסיעודית, תוך הבנת הצרכים
-                        הייחודיים
-                        של כל משפחה והתאמת הפתרונות הטובים ביותר. אני מאמינה שכל אדם זכאי לטיפול איכותי וראוי, והמפתח
-                        הוא
-                        בחירה נכונה של המסגרת הטיפולית והשירותים הנלווים.
+                        בלימודים אמרתי לעצמי "קשישים? זה לא בשבילי." אבל אז שמו אותי בבית אבות, והתאהבתי. מאז זה
+                        היסטוריה.
                     </p>
                     <p>
-                        בעבודתי אני משלבת ידע מקצועי רחב עם רגישות אנושית, תוך מתן ליווי צמוד ותמיכה רגשית למשפחות
-                        בעת משבר סיעודי. המטרה היא להקל על התהליך ולהבטיח שהמשפחה תקבל את הטיפול הטוב ביותר האפשרי.
+                        9 שנים אני עובדת סוציאלית עם בני הגיל השלישי ועם המשפחות שלהם. עוזרת בייעוץ, מיצוי זכויות ותיווך
+                        מול הגורמים השונים.
+                        חשוב לי לתת מקום לכל הצדדים שנוגעים בסיפור.
+                    </p>
+                    <p>
+                        כי חשוב לי להבין מה יסייע לכל אחד באותה נקודת זמן. לא רק לפתור את הבעיה אלא להבין אותה גם.
                     </p>
                 </div>
             </div>
@@ -467,55 +85,36 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">השירותים שלי</h2>
+            <h2 class="section-title slide-up">השירותים שלי</h2>
             <p class="section-subtitle">ליווי מקצועי ומקיף בתחום הסיעוד והטיפול המשפחתי</p>
 
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>הערכה ותכנון טיפולי</h3>
+                <div class="service-card scale-up">
+                    <h4>מיצוי זכויות</h4>
                     <p>
-                        הערכה מקצועית מעמיקה של מצב המטופל וצרכי המשפחה, הכוללת ביקור בית ובניית תוכנית טיפולית
-                        מותאמת אישית. אני מספקת מפת דרכים ברורה ומפורטת לבחירת המסגרת הטיפולית המתאימה ביותר.
+                        בדיקת זכאות לכל ההטבות והקצבאות המגיעות לכם. אני אעזור לכם להבין מה מגיע לכם ולהגיש את הבקשות.
+                        לא תאמינו כמה כסף אתם מפסידים אם לא תבדקו!
                     </p>
                 </div>
-
-                <div class="service-card">
-                    <h3>ליווי משפחות בתהליך הטיפולי</h3>
+                <div class="service-card scale-up">
+                    <h4>תכנון מראש</h4>
                     <p>
-                        ליווי צמוד ותמיכה רגשית למשפחות לאורך כל התהליך - מהשלב הראשוני של קבלת האבחנה,
-                        דרך בחירת המסגרת הטיפולית ועד להטמעה מלאה. אני זמינה לכל שאלה ונותנת מענה מקצועי ומיידי.
+                        הכנה לתקופה שבה לא נוכל להחליט בעצמנו. ייפוי כוח מתמשך, צוואה, ירושה, הסדרת עניינים רפואיים.
+                        הכל כדי שתוכלו לישון בשקט בלילה.
                     </p>
                 </div>
-
-                <div class="service-card">
-                    <h3>קואורדינציה של שירותים סיעודיים</h3>
+                <div class="service-card scale-up">
+                    <h4>תמיכה רגשית</h4>
                     <p>
-                        תיאום מלא של כל השירותים הנדרשים - החל מהעסקת מטפל/ת סיעודי, דרך בחירת מוסד טיפולי
-                        מתאים וכלה בקישור עם גורמי הרווחה והביטוח. אני מבטיחה רצף טיפולי ללא הפסקות או בעיות.
+                        לפעמים צריך מישהו שיקשיב. אני כאן בשבילכם - להורים, לילדים, לכל המשפחה. נדבר על הכל, נבכה ביחד,
+                        נצחק ביחד, ונמצא את הדרך להמשיך הלאה.
                     </p>
                 </div>
-
-                <div class="service-card">
-                    <h3>יעוץ מקצועי ומידע</h3>
+                <div class="service-card scale-up">
+                    <h4>פגישת היכרות</h4>
                     <p>
-                        יעוץ פרקטי וחוויתי בכל הנוגע לבחירת מסגרות טיפול, זכויות רפואיות, תהליכי קבלה למוסדות
-                        והתאמת השירותים לצרכים הספציפיים. אני מספקת מידע עדכני ומדויק על כל האפשרויות הקיימות.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <h3>ליווי קרוב ומתמשך</h3>
-                    <p>
-                        נוכחות קבועה ותמיכה לאורך זמן, הכוללת ביקורים תקופתיים, מעקב אחר התקדמות הטיפול,
-                        התאמות נדרשות ופתרון בעיות שעלולות לצוץ. אני מבטיחה טיפול רציף ואיכותי לאורך כל התקופה.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <h3>קשר עם מוסדות וגורמים מקצועיים</h3>
-                    <p>
-                        ייצוג מקצועי מול מוסדות טיפוליים, חברות ביטוח, משרד הבריאות וגורמי רווחה.
-                        אני מנהלת משא ומתן, מטפלת בבירוקרטיה ומבטיחה שהמשפחה תקבל את כל הזכויות והשירותים המגיעים לה.
+                        בואו נפגש ונראה איך אני יכולה לעזור לכם. ללא התחייבות, רק כדי להבין את הצרכים שלכם ולראות
+                        אם אנחנו מתאימות. לפעמים די בפגישה אחת כדי לפתור את הבעיה.
                     </p>
                 </div>
             </div>
@@ -525,34 +124,39 @@
     <!-- Experience Section -->
     <section class="experience" id="experience">
         <div class="container">
-            <h2 class="section-title">ניסיון מקצועי</h2>
+            <h2 class="section-title slide-up">ניסיון מקצועי</h2>
 
-            <div class="experience-item">
-                <h4>עובדת סוציאלית בכירה בתחום הסיעוד</h4>
-                <div class="role">מומחית בליווי משפחות ומתן פתרונות טיפוליים</div>
+            <div class="experience-item slide-up">
+                <h4>תואר בעבודה סוציאלית</h4>
+                <div class="role">אוניברסיטת תל אביב</div>
                 <p>
-                    ניסיון רב שנים בליווי משפחות בתהליכים סיעודיים מורכבים, החל משלב ההערכה הראשונית ועד למימוש מלא
-                    של הפתרון הטיפולי. מומחית בקואורדינציה בין מוסדות שונים ובניית תוכניות טיפול מקיפות ומותאמות אישית.
+                    למדתי בעבודה סוציאלית כי רציתי לעזור לאנשים. התמחיתי בגרונטולוגיה כי הבנתי שזו האוכלוסייה הכי צריכה
+                    עזרה.
+                    שם התחלתי להבין כמה חשוב לתת מקום לכל הצדדים בסיפור.
                 </p>
             </div>
 
-            <div class="experience-item">
-                <h4>קואורדינטורית שירותים רפואיים וסיעודיים</h4>
-                <div class="role">ניהול מקרים ותיאום שירותים</div>
+            <div class="experience-item slide-up">
+                <h4>עובדת סוציאלית בבית אבות</h4>
+                <div class="role">9 שנים ניסיון</div>
                 <p>
-                    ניהול מקרים מורכבים הכולל תיאום בין מוסדות רפואיים, סיעודיים וחברות ביטוח. בניית רשת תמיכה
-                    מקצועית הכוללת מטפלים, רופאים, עובדים סוציאליים וגורמי רווחה, תוך הבטחת רצף טיפולי מלא.
+                    התחלתי כסטודנטית והיום אני עובדת סוציאלית בכירה. אני עוזרת לקשישים ולמשפחות שלהם להתמודד עם אתגרים,
+                    מלווה אותם בתהליכים רפואיים, עוזרת במיצוי זכויות ונותנת תמיכה רגשית. כל יום אני רואה איך עזרה קטנה
+                    יכולה
+                    לשנות חיים שלמים.
                 </p>
             </div>
 
-            <div class="experience-item">
-                <h4>יועצת משפחות בתהליכי סיעוד</h4>
-                <div class="role">יעוץ וליווי רגשי מקצועי</div>
+            <div class="experience-item slide-up">
+                <h4>יועצת עצמאית למשפחות</h4>
+                <div class="role">שירותים פרטיים</div>
                 <p>
-                    יעוץ ישיר ומקצועי למשפחות בשאלות מורכבות הנוגעות לטיפול סיעודי, בחירת מסגרות טיפוליות,
-                    זכויות רפואיות ותמיכה רגשית בעתות משבר. מתמחה בפתרון בעיות בירוקרטיות והנגשת מידע מורכב.
+                    אני מציעה שירותים פרטיים למשפחות שרוצות הכנה מראש - ייפוי כוח מתמשך, צוואות, תכנון עתידי.
+                    אני מאמינה שכדאי להסדיר הכל בזמן שאפשר, כדי לחסוך כאב לבני המשפחה בעתיד.
                 </p>
             </div>
+            </p>
+        </div>
         </div>
     </section>
 
@@ -565,7 +169,7 @@
             </p>
 
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info slide-up">
                     <h3>פרטי התקשרות</h3>
                     <p>
                         <strong>שם:</strong> סיון גילאור<br>
@@ -575,6 +179,10 @@
                     <p>
                         <strong>טלפון:</strong>
                         <a href="tel:0552486198">0552486198</a>
+                    </p>
+                    <p>
+                        <strong>וואטסאפ:</strong>
+                        <a href="https://wa.me/972552486198" target="_blank">0552486198</a>
                     </p>
                     <p>
                         <strong>דוא"ל:</strong>
@@ -588,9 +196,16 @@
                         <strong>פייסבוק:</strong>
                         <a href="https://www.facebook.com/share/17nbGHrZdU/" target="_blank">עמוד הפייסבוק</a>
                     </p>
+                    <p>
+                        <strong>מקומות מפגש:</strong><br>
+                        • זום (לכל הארץ)<br>
+                        • קליניקה בלוד<br>
+                        • ביקורי בית (אזור המרכז)
+                    </p>
                 </div>
 
-                <form class="contact-form" action="mailto:sivangsw@gmail.com" method="post" enctype="text/plain">
+                <form class="contact-form slide-up" action="mailto:sivangsw@gmail.com" method="post"
+                    enctype="text/plain">
                     <input type="text" name="name" placeholder="שם מלא" required>
                     <input type="email" name="email" placeholder="כתובת דוא״ל" required>
                     <input type="tel" name="phone" placeholder="מספר טלפון">
@@ -606,6 +221,7 @@
         <p>&copy; 2026 סיון גילאור - עובדת סוציאלית. כל הזכויות שמורות.</p>
         <p>בנוי בחסד ובמקצועיות למען משפחות שלנו</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
