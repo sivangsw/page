@@ -1,11 +1,6 @@
 # Development files - not for deployment
 prompt
 prompt_clean.txt
-FILE_INDEX.md
-PROJECT_SUMMARY.md
-QUICK_START.md
-WEBSITE_GUIDE.md
-DEPLOYMENT_CHECKLIST.md
 example/
 
 # System files

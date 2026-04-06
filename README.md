@@ -84,6 +84,7 @@ index.html          - Complete website (HTML + CSS)
 sivan-profile.jpg   - Professional profile image
 README.md           - This documentation
 .gitignore          - Git ignore rules
+.gitattributes      - Git configuration
 ```
 
 ## Contributing
