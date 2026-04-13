@@ -212,7 +212,7 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
@@ -465,6 +465,10 @@ footer {
     nav ul {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 
     .hero h1 {
