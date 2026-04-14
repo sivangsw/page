@@ -15,7 +15,8 @@ body {
 header {
     background: linear-gradient(135deg, #042C53 0%, #042C53 100%);
     color: white;
-    padding: 20px 0;
+    padding: 0;
+    height: 80px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -31,11 +32,10 @@ nav {
     padding: 0 20px;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    flex: 1;
+.logo img {
+    height: 80px;
+    width: auto;
+    max-width: 300px;
 }
 
 nav ul {
