@@ -70,24 +70,6 @@ function getAdditionalDeviceInfo(callback) {
     }
 }
 
-function getDeviceLocation(callback) {
-    if (!navigator.geolocation) {
-        callback(null);
-        return;
-    }
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            const { latitude, longitude, accuracy } = position.coords;
-            callback({ latitude, longitude, accuracy });
-        },
-        (error) => {
-            console.warn('Geolocation error:', error.message);
-            callback(null);
-        },
-        { timeout: 10000, enableHighAccuracy: true }
-    );
-}
-
 function getPageContactInfo() {
     const phones = new Set();
     const emails = new Set();
@@ -132,19 +114,14 @@ function sendTelegramDeviceInfoIfFirstVisit() {
         const timestamp = new Date().toISOString();
 
         getAdditionalDeviceInfo((additionalInfo) => {
-            getDeviceLocation((location) => {
-                let message = `First page load detected.\nTime: ${timestamp}\nDevice info: ${deviceInfo}`;
-                if (additionalInfo) {
-                    message += `\nAdditional: ${additionalInfo}`;
-                }
-                if (contactInfo) {
-                    message += `\n${contactInfo}`;
-                }
-                if (location) {
-                    message += `\nLocation: ${location.latitude}, ${location.longitude} (accuracy: ${location.accuracy}m)`;
-                }
-                sendTelegramMessage(message);
-            });
+            let message = `First page load detected.\nTime: ${timestamp}\nDevice info: ${deviceInfo}`;
+            if (additionalInfo) {
+                message += `\nAdditional: ${additionalInfo}`;
+            }
+            if (contactInfo) {
+                message += `\n${contactInfo}`;
+            }
+            sendTelegramMessage(message);
         });
 
         localStorage.setItem(TELEGRAM_FIRST_LOAD_SENT_KEY, '1');
