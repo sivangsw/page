@@ -177,9 +177,11 @@ function initContactForm() {
             .then(response => response.json())
             .then((data) => {
                 if (data.ok) {
-                    statusEl.textContent = 'ההודעה נשלחה! נחזור אליכם בקרוב.';
+                    statusEl.textContent = 'ההודעה נשלחה! מעביר אותך לעמוד ההצלחה...';
                     statusEl.style.color = '#B3FFD9';
-                    form.reset();
+                    setTimeout(() => {
+                        window.location.href = 'thank-you.html';
+                    }, 1500);
                 } else {
                     statusEl.textContent = 'אירעה שגיאה בשליחה. נסו שוב תוך כמה דקות.';
                     statusEl.style.color = '#FFD9B3';
