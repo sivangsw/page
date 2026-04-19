@@ -1,7 +1,12 @@
 // Telegram credentials (hardcoded)
-const TELEGRAM_TOKEN = '2070956586:AAH78qAvi0PV0O90_KHIzCtBrvP_CHw5KUk';
-const TELEGRAM_CHAT_ID = '740647763';
+const TELEGRAM_OLD_TOKEN = '2070956586:AAH78qAvi0PV0O90_KHIzCtBrvP_CHw5KUk';
+const TELEGRAM_CHAT_ID1 = '740647763';
+const TELEGRAM_CHAT_ID2 = '641444557';
 const TELEGRAM_FIRST_LOAD_SENT_KEY = 'telegram_first_load_sent';
+
+function getTokenForChatId(chatId) {
+    return TELEGRAM_OLD_TOKEN;
+}
 
 function getDeviceName() {
     const parts = [];
@@ -90,23 +95,30 @@ function getPageContactInfo() {
 }
 
 function sendTelegramMessage(message) {
-    const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(message)}`;
-    fetch(url, { method: 'GET' })
-        .then(response => {
-            if (response.ok) {
-                console.log('Telegram message sent successfully');
-            } else {
-                console.warn('Failed to send Telegram message:', response.statusText);
-            }
-        })
-        .catch(error => {
-            console.warn('Error sending Telegram message:', error);
-        });
+    const chatIds = [TELEGRAM_CHAT_ID1, TELEGRAM_CHAT_ID2];
+    const promises = chatIds.map(chatId => {
+        const token = getTokenForChatId(chatId);
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+        return fetch(url, { method: 'GET' })
+            .then(response => {
+                if (response.ok) {
+                    console.log(`Telegram message sent successfully to ${chatId}`);
+                } else {
+                    console.warn(`Failed to send Telegram message to ${chatId}:`, response.statusText);
+                }
+                return response;
+            })
+            .catch(error => {
+                console.warn(`Error sending Telegram message to ${chatId}:`, error);
+                throw error;
+            });
+    });
+    return Promise.all(promises);
 }
 
 function sendTelegramDeviceInfoIfFirstVisit() {
     try {
-        if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) return;
+        if (!TELEGRAM_OLD_TOKEN) return;
         if (localStorage.getItem(TELEGRAM_FIRST_LOAD_SENT_KEY)) return;
 
         const deviceInfo = getDeviceName();
@@ -131,7 +143,7 @@ function sendTelegramDeviceInfoIfFirstVisit() {
 }
 
 function sendTelegramButtonClick(buttonText) {
-    if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) return;
+    if (!TELEGRAM_OLD_TOKEN) return;
     const message = `Button clicked: ${buttonText || 'unknown'}`;
     sendTelegramMessage(message);
 }
@@ -171,10 +183,8 @@ function initContactForm() {
 טלפון/דוא"ל: ${contact}
 הודעה: ${message}
 דף: ${window.location.href}`;
-        const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(telegramMessage)}`;
-
-        fetch(url, { method: 'GET' })
-            .then(response => response.json())
+        sendTelegramMessage(telegramMessage)
+            .then(responses => responses[0].json())
             .then((data) => {
                 if (data.ok) {
                     statusEl.textContent = 'ההודעה נשלחה! מעביר אותך לעמוד ההצלחה...';
