@@ -145,6 +145,55 @@ function attachTelegramButtonListeners() {
     });
 }
 
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('contact-status');
+    if (!form || !statusEl) return;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('contact-name').value.trim();
+        const contact = document.getElementById('contact-phone').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+
+        if (!name || !contact || !message) {
+            statusEl.textContent = 'אנא מלא/י את כל השדות כדי לשלוח.';
+            statusEl.style.color = '#FFD9B3';
+            return;
+        }
+
+        statusEl.textContent = 'שולח...';
+        statusEl.style.color = 'white';
+
+        const telegramMessage = `בקשת יצירת קשר חדשה:
+שם: ${name}
+טלפון/דוא"ל: ${contact}
+הודעה: ${message}
+דף: ${window.location.href}`;
+        const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(telegramMessage)}`;
+
+        fetch(url, { method: 'GET' })
+            .then(response => response.json())
+            .then((data) => {
+                if (data.ok) {
+                    statusEl.textContent = 'ההודעה נשלחה! נחזור אליכם בקרוב.';
+                    statusEl.style.color = '#B3FFD9';
+                    form.reset();
+                } else {
+                    statusEl.textContent = 'אירעה שגיאה בשליחה. נסו שוב תוך כמה דקות.';
+                    statusEl.style.color = '#FFD9B3';
+                    console.warn('Telegram response error:', data);
+                }
+            })
+            .catch((error) => {
+                statusEl.textContent = 'שגיאת רשת. בדקו את החיבור ונסו שוב.';
+                statusEl.style.color = '#FFD9B3';
+                console.warn('Telegram fetch error:', error);
+            });
+    });
+}
+
 // Hamburger Menu Toggle
 const hamburger = document.getElementById('hamburger');
 const navUl = document.querySelector('nav ul');
@@ -184,4 +233,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     sendTelegramDeviceInfoIfFirstVisit();
     attachTelegramButtonListeners();
+    initContactForm();
 });

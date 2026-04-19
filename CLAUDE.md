@@ -80,7 +80,7 @@
 
 ### קבצים ב-repository
 - `index.html` - אתר מלא
-- `sivan-profile.jpg` - תמונת פרופיל
+- `hands.jpeg` - תמונת פרופיל
 - `README.md` - תיעוד
 - `.gitignore` - כללי התעלמות
 - `.gitattributes` - הגדרות Git

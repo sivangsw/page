@@ -81,7 +81,7 @@ Edit hex color values in the `<style>` section:
 
 ```
 index.html          - Complete website (HTML + CSS)
-sivan-profile.jpg   - Professional profile image
+hands.jpeg          - Professional profile image
 README.md           - This documentation
 .gitignore          - Git ignore rules
 .gitattributes      - Git configuration

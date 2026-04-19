@@ -40,8 +40,11 @@ nav {
 
 nav ul {
     list-style: none;
-    display: none;
+    display: flex;
     gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul.active {
@@ -60,7 +63,7 @@ nav a:hover {
 }
 
 .hero {
-    background: linear-gradient(rgba(30, 58, 95, 0.8), rgba(30, 58, 95, 0.8)), url('sivan-profile.jpg');
+    background: linear-gradient(rgba(30, 58, 95, 0.8), rgba(30, 58, 95, 0.8)), url('hands.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -338,6 +341,13 @@ section {
     background-color: #c44a25;
 }
 
+.contact-form .form-status {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 24px;
+}
+
 footer {
     background-color: #1a252f;
     color: white;
@@ -436,35 +446,42 @@ footer {
         display: flex;
     }
 
-    .nav-menu {
+    nav ul {
+        display: none;
         position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: linear-gradient(135deg, #042C53 0%, #042C53 100%);
+        top: 80px;
+        right: 20px;
+        left: auto;
+        width: auto;
+        background-color: #f39c12;
         flex-direction: column;
         gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        padding: 10px 0;
+        border-radius: 0 0 0 0;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        z-index: 120;
+        min-width: 180px;
+        max-width: 220px;
     }
 
-    .nav-menu.active {
-        max-height: 300px;
+    nav ul.active {
+        display: flex;
     }
 
-    .nav-menu li {
-        padding: 15px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    nav ul li {
+        width: auto;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .nav-menu li:last-child {
+    nav ul li:last-child {
         border-bottom: none;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        color: white;
+        font-size: 18px;
     }
 
     .services-grid {
@@ -499,5 +516,9 @@ footer {
 
     .contact-btn {
         width: 200px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
     }
 }
