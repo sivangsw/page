@@ -314,6 +314,89 @@ section {
     line-height: 1.8;
 }
 
+.guides {
+    background-color: white;
+}
+
+.guides .container {
+    max-width: 800px;
+}
+
+.guides a {
+    color: #042C53;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.guides a:hover {
+    color: #D85A30;
+}
+
+.article {
+    background-color: white;
+}
+
+.article .container {
+    max-width: 800px;
+}
+
+.article h1 {
+    font-size: 38px;
+    line-height: 1.3;
+    color: #042C53;
+    margin-bottom: 10px;
+}
+
+.article .byline {
+    color: #7f8c8d;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.article h2 {
+    font-size: 26px;
+    color: #042C53;
+    margin: 40px 0 15px;
+}
+
+.article p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.article .lead {
+    font-size: 20px;
+    color: #333;
+}
+
+.article ol {
+    margin: 0 0 20px;
+    padding-right: 25px;
+}
+
+.article li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.article-cta {
+    background-color: #F7F4F0;
+    border-radius: 8px;
+    padding: 10px 30px 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.article-cta .contact-btn {
+    margin: 10px 0 20px;
+}
+
+.article-cta a:not(.contact-btn) {
+    color: #042C53;
+}
+
 .contact {
     background: linear-gradient(135deg, #042C53 0%, #042C53 100%);
     color: white;
@@ -530,6 +613,10 @@ footer {
     .about-content {
         flex-direction: column;
         align-items: center;
+    }
+
+    .article h1 {
+        font-size: 28px;
     }
 
     .hero h1 {
