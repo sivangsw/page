@@ -287,6 +287,10 @@ section {
     line-height: 1.7;
 }
 
+.experience-item a {
+    color: #1D9E75;
+}
+
 .faq {
     background-color: #F7F4F0;
 }
