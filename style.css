@@ -192,8 +192,20 @@ section {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-photo img {
+    display: block;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .about-text h3 {
@@ -273,6 +285,33 @@ section {
 .experience-item p {
     color: #7f8c8d;
     line-height: 1.7;
+}
+
+.faq {
+    background-color: #F7F4F0;
+}
+
+.faq .container {
+    max-width: 800px;
+}
+
+.faq-item {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 22px;
+    color: #042C53;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #555;
+    line-height: 1.8;
 }
 
 .contact {
@@ -486,6 +525,11 @@ footer {
 
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero h1 {
