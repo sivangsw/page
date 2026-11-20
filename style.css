@@ -318,6 +318,14 @@ section[id] {
     line-height: 1.8;
 }
 
+.faq-item p + p {
+    margin-top: 10px;
+}
+
+.faq-item p a {
+    color: #042C53;
+}
+
 .guides {
     background-color: white;
 }
