@@ -1,0 +1,4 @@
+# Keeps internal working files out of the published site
+exclude:
+  - CLAUDE.md
+  - README.md

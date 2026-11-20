@@ -16,7 +16,8 @@ const navUl = document.querySelector('nav ul');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    navUl.classList.toggle('active');
+    const isOpen = navUl.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
 });
 
 // Close menu when a link is clicked
@@ -24,6 +25,7 @@ navUl.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navUl.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
 });
 

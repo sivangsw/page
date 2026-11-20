@@ -95,13 +95,13 @@ nav a:hover {
 }
 
 .hero .cta-button {
-    background-color: #D85A30;
-    border: 2px solid #D85A30;
+    background-color: #C44A25;
+    border: 2px solid #C44A25;
 }
 
 .hero .cta-button:hover {
-    background-color: #c44a25;
-    border-color: #c44a25;
+    background-color: #A93D1C;
+    border-color: #A93D1C;
 }
 
 .hero h1 {
@@ -119,18 +119,13 @@ nav a:hover {
 
 .hero .cta-button {
     display: inline-block;
-    background-color: #f39c12;
     color: white;
     padding: 15px 40px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     transition: background-color 0.3s;
     font-weight: 600;
-}
-
-.hero .cta-button:hover {
-    background-color: #e67e22;
 }
 
 .contact-buttons {
@@ -148,7 +143,7 @@ nav a:hover {
 
 .contact-btn {
     display: inline-block;
-    background-color: #D85A30;
+    background-color: #C44A25;
     color: white;
     padding: 15px 20px;
     text-decoration: none;
@@ -159,7 +154,7 @@ nav a:hover {
 }
 
 .contact-btn:hover {
-    background-color: #c44a25;
+    background-color: #A93D1C;
 }
 
 .container {
@@ -170,6 +165,11 @@ nav a:hover {
 
 section {
     padding: 80px 20px;
+}
+
+/* Keeps section headings clear of the sticky header after a menu click */
+section[id] {
+    scroll-margin-top: 80px;
 }
 
 .section-title {
@@ -252,7 +252,7 @@ section {
 }
 
 .service-card p {
-    color: #7f8c8d;
+    color: #5c6a6b;
     line-height: 1.7;
 }
 
@@ -270,25 +270,25 @@ section {
     border-bottom: none;
 }
 
-.experience-item h4 {
+.experience-item h3 {
     color: #042C53;
     font-size: 18px;
     margin-bottom: 5px;
 }
 
 .experience-item .role {
-    color: #1D9E75;
+    color: #147A5A;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 .experience-item p {
-    color: #7f8c8d;
+    color: #5c6a6b;
     line-height: 1.7;
 }
 
 .experience-item a {
-    color: #1D9E75;
+    color: #147A5A;
 }
 
 .faq {
@@ -352,7 +352,7 @@ section {
 }
 
 .article .byline {
-    color: #7f8c8d;
+    color: #5c6a6b;
     font-size: 16px;
     margin-bottom: 30px;
 }
@@ -372,6 +372,14 @@ section {
 .article .lead {
     font-size: 20px;
     color: #333;
+}
+
+.article p a:not(.contact-btn) {
+    color: #042C53;
+}
+
+.article a[href^="tel:"] {
+    white-space: nowrap;
 }
 
 .article ol {
@@ -412,7 +420,7 @@ section {
     gap: 40px;
 }
 
-.contact-info h3 {
+.contact-info h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -438,12 +446,17 @@ section {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+/* Phone fields default to left-to-right; keep the placeholder on the right like the other fields */
+.contact-form input[type="tel"] {
+    direction: rtl;
 }
 
 .contact-form input::placeholder,
@@ -451,8 +464,18 @@ section {
     color: rgba(255, 255, 255, 0.7);
 }
 
+.contact-form .form-privacy {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.contact-form .form-privacy a {
+    color: #f39c12;
+}
+
 .contact-form button {
-    background-color: #D85A30;
+    background-color: #C44A25;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -464,7 +487,7 @@ section {
 }
 
 .contact-form button:hover {
-    background-color: #c44a25;
+    background-color: #A93D1C;
 }
 
 .contact-form .form-status {
@@ -480,6 +503,43 @@ footer {
     text-align: center;
     padding: 30px 20px;
     font-size: 16px;
+}
+
+footer a {
+    color: white;
+}
+
+/* Accessibility helpers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    right: 10px;
+    background-color: white;
+    color: #042C53;
+    padding: 10px 16px;
+    border-radius: 5px;
+    z-index: 200;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Sticky contact bar, shown on mobile only */
+.mobile-contact-bar {
+    display: none;
 }
 
 /* Scroll Animation Keyframes */
@@ -517,10 +577,10 @@ footer {
     }
 }
 
-/* Animation classes */
-.fade-in,
-.slide-up,
-.scale-up {
+/* Animation classes. Content is hidden only when JavaScript is running (the "js" class is set in <head>) */
+.js .fade-in,
+.js .slide-up,
+.js .scale-up {
     opacity: 0;
 }
 
@@ -536,9 +596,23 @@ footer {
     animation: scaleUp 0.6s ease-out forwards;
 }
 
+@media (prefers-reduced-motion: reduce) {
+
+    .js .fade-in,
+    .js .slide-up,
+    .js .scale-up {
+        opacity: 1;
+        animation: none;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
+
 /* Hamburger Menu */
 .hamburger {
-    display: flex;
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
@@ -579,7 +653,9 @@ footer {
         right: 20px;
         left: auto;
         width: auto;
-        background-color: #f39c12;
+        background-color: #042C53;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-top: none;
         flex-direction: column;
         gap: 0;
         padding: 10px 0;
@@ -623,6 +699,11 @@ footer {
         font-size: 28px;
     }
 
+    .hero {
+        padding: 40px 20px;
+        min-height: 0;
+    }
+
     .hero h1 {
         font-size: 36px;
     }
@@ -655,5 +736,34 @@ footer {
 
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    body {
+        padding-bottom: 64px;
+    }
+
+    .mobile-contact-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 8px 10px;
+        background-color: #042C53;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 110;
+    }
+
+    .mobile-contact-bar a {
+        background-color: #C44A25;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        padding: 12px 8px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 600;
     }
 }

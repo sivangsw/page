@@ -9,17 +9,21 @@
     <title>סיון גילאור - עובדת סוציאלית פרטית לגיל השלישי ולבני משפחה</title>
     <meta name="description"
         content="סיון גילאור, עובדת סוציאלית פרטית עם 10 שנות ניסיון בגיל השלישי. ייעוץ וליווי למשפחות שמטפלות בהורה מבוגר, מיצוי זכויות מול ביטוח לאומי ותכנון מראש. שירות לכל הארץ: בזום, אצלכם בבית או בקליניקה בלוד.">
-    <meta name="keywords" content="סיעוד, טיפול, עובדת סוציאלית, סיון, ליווי משפחות">
     <link rel="canonical" href="https://sivangsw.github.io/page/">
     <meta property="og:title" content="סיון גילאור - עובדת סוציאלית פרטית לגיל השלישי ולבני משפחה">
     <meta property="og:description"
         content="ייעוץ וליווי למשפחות שמטפלות בהורה מבוגר, מיצוי זכויות מול ביטוח לאומי ותכנון מראש. שירות לכל הארץ: בזום, אצלכם בבית או בקליניקה בלוד.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sivangsw.github.io/page/">
-    <meta property="og:image" content="https://sivangsw.github.io/page/logo6.jpeg">
+    <meta property="og:image" content="https://sivangsw.github.io/page/share.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="he_IL">
     <meta property="og:site_name" content="סיון גילאור - עובדת סוציאלית לגיל השלישי">
     <meta name="author" content="סיון גילאור">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
@@ -53,7 +57,10 @@
             "alternateName": "Sivan Gilor",
             "image": "https://sivangsw.github.io/page/sivan-gilor.jpg",
             "jobTitle": "עובדת סוציאלית",
-            "alumniOf": "אוניברסיטת בר-אילן",
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "אוניברסיטת בר-אילן"
+            },
             "knowsAbout": [
                 "הגיל השלישי",
                 "מיצוי זכויות",
@@ -66,19 +73,21 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main">דלג לתוכן</a>
     <!-- Header Navigation -->
     <header>
         <nav>
-            <button class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="תפריט" aria-expanded="false"
+                aria-controls="main-nav">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="logo"><img src="logo6.jpeg" alt="סיון גילאור - עובדת סוציאלית לגיל השלישי" width="1392"
                     height="736"></div>
-            <ul>
+            <ul id="main-nav">
                 <li><a href="#home">עמוד הבית</a></li>
-                <li><a href="#about">עלי</a></li>
+                <li><a href="#about">עליי</a></li>
                 <li><a href="#services">שירותים</a></li>
                 <li><a href="#experience">ניסיון</a></li>
                 <li><a href="#faq">שאלות נפוצות</a></li>
@@ -87,6 +96,7 @@
         </nav>
     </header>
 
+    <main id="main">
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
@@ -94,6 +104,8 @@
                 <h1>סיון גילאור</h1>
                 <p>עובדת סוציאלית פרטית לגיל השלישי ובני משפחותיהם</p>
                 <p>עוזרת לבני הגיל השלישי ומשפחותיהם להתכונן לזקנה בלי לוותר על איכות החיים</p>
+                <a href="https://wa.me/972552486198?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A1%D7%99%D7%95%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5."
+                    class="cta-button" target="_blank" rel="noopener">כתבו לי בוואטסאפ</a>
             </div>
         </div>
     </section>
@@ -102,11 +114,14 @@
     <section class="contact-buttons">
         <div class="container">
             <div class="buttons-grid">
-                <a href="tel:0552486198" class="contact-btn">📞 התקשר</a>
-                <a href="mailto:sivangsw@gmail.com" class="contact-btn">✉️ דוא"ל</a>
-                <a href="https://wa.me/972552486198" class="contact-btn" target="_blank">💬 וואטסאפ</a>
-                <a href="https://instagram.com/sivangsw" class="contact-btn" target="_blank">📷 אינסטגרם</a>
-                <a href="https://www.facebook.com/share/17nbGHrZdU/" class="contact-btn" target="_blank">📘 פייסבוק</a>
+                <a href="tel:+972552486198" class="contact-btn"><span aria-hidden="true">📞</span> התקשר</a>
+                <a href="mailto:sivangsw@gmail.com" class="contact-btn"><span aria-hidden="true">✉️</span> דוא"ל</a>
+                <a href="https://wa.me/972552486198?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A1%D7%99%D7%95%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5."
+                    class="contact-btn" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> וואטסאפ</a>
+                <a href="https://www.instagram.com/sivangsw" class="contact-btn" target="_blank"
+                    rel="noopener"><span aria-hidden="true">📷</span> אינסטגרם</a>
+                <a href="https://www.facebook.com/share/17nbGHrZdU/" class="contact-btn" target="_blank"
+                    rel="noopener"><span aria-hidden="true">📘</span> פייסבוק</a>
             </div>
         </div>
     </section>
@@ -185,15 +200,15 @@
             <h2 class="section-title slide-up">ניסיון מקצועי</h2>
 
             <div class="experience-item slide-up">
-                <h4>תואר ראשון ושני בעבודה סוציאלית</h4>
-                <div class="role">מבר אילן</div>
+                <h3>תואר ראשון ושני בעבודה סוציאלית</h3>
+                <div class="role">מבר-אילן</div>
                 <p>
                     למדתי בעבודה סוציאלית כי רציתי לעזור לאנשים. מאז לא הפסקתי ללמוד.
                 </p>
             </div>
 
             <div class="experience-item slide-up">
-                <h4>4 שנים במרכז גריאטרי, 6 שנים ברווחה</h4>
+                <h3>4 שנים במרכז גריאטרי, 6 שנים ברווחה</h3>
                 <div class="role">כולם עם גיל השלישי ובני משפחותיהם</div>
                 <p>
                     10 שנים שאני בתחום הזה ועדיין מתאהבת בו מחדש כל פעם.
@@ -201,12 +216,12 @@
             </div>
 
             <div class="experience-item slide-up">
-                <h4>רשומה בפנקס העובדים הסוציאליים</h4>
+                <h3>רשומה בפנקס העובדים הסוציאליים</h3>
                 <div class="role">של משרד הרווחה והביטחון החברתי</div>
             </div>
 
             <div class="experience-item slide-up">
-                <h4>הרצאת אורח באוניברסיטה העברית</h4>
+                <h3>הרצאת אורח באוניברסיטה העברית</h3>
                 <div class="role">בית הספר לריפוי בעיסוק, בקורס "ניהול טיפול ומיצוי זכויות בתקופת הזקנה"</div>
                 <p>
                     הרציתי על מיצוי זכויות, על תיווך בתוך המשפחה ועל דילמות מקצועיות ואתיות. בבית הספר כתבו:
@@ -216,7 +231,7 @@
             </div>
 
             <div class="experience-item slide-up">
-                <h4>אני מאמינה שתמיד יש מה ללמוד</h4>
+                <h3>אני מאמינה שתמיד יש מה ללמוד</h3>
                 <div class="role">כדי שאתם תקבלו את הטוב ביותר</div>
                 <p>
                     כל יום אני רואה איך עזרה קטנה יכולה לשנות חיים שלמים.
@@ -316,8 +331,8 @@
     <section class="contact" id="contact">
         <div class="container contact-content">
             <div class="contact-info">
-                <h3>השאירי/השאירו פרטים</h3>
-                <p>מלאו את הפרטים ונחזור אליכם בהקדם עם מענה אישי.</p>
+                <h2>השאירי/השאירו פרטים</h2>
+                <p>אני קוראת כל פנייה בעצמי, וחוזרת אליכם בטלפון או בוואטסאפ.</p>
                 <p>ניתן גם ליצור קשר ישיר דרך הטלפון או הוואטסאפ למעלה.</p>
                 <p>שירות לכל הארץ: פגישות בזום, אצלכם בבית, או בקליניקה בלוד.</p>
                 <p>
@@ -331,19 +346,37 @@
                 <input type="hidden" name="from_name" value="האתר של סיון גילאור">
                 <input type="hidden" name="redirect" value="https://sivangsw.github.io/page/thank-you.html">
                 <input type="checkbox" name="botcheck" style="display: none" tabindex="-1" autocomplete="off">
-                <input type="text" id="contact-name" name="name" placeholder="שם מלא" required>
-                <input type="text" id="contact-phone" name="phone" placeholder="טלפון או דואר אלקטרוני" required>
+                <label for="contact-name" class="visually-hidden">שם מלא</label>
+                <input type="text" id="contact-name" name="name" placeholder="שם מלא" autocomplete="name" required>
+                <label for="contact-phone" class="visually-hidden">טלפון</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="טלפון" autocomplete="tel" required>
+                <label for="contact-email" class="visually-hidden">דואר אלקטרוני (לא חובה)</label>
+                <input type="email" id="contact-email" name="email" placeholder="דואר אלקטרוני (לא חובה)"
+                    autocomplete="email">
+                <label for="contact-message" class="visually-hidden">ההודעה שלך</label>
                 <textarea id="contact-message" name="message" rows="5" placeholder="כתוב/י את ההודעה שלך כאן..."
                     required></textarea>
+                <p class="form-privacy">
+                    אני משתמשת בפרטים רק כדי לחזור אליכם. עדיף לא לכתוב כאן פרטים רפואיים, נדבר עליהם בשיחה.
+                    <a href="privacy.html">מדיניות פרטיות</a>
+                </p>
                 <button type="submit">שלח</button>
                 <p class="form-status" id="contact-status"></p>
             </form>
         </div>
     </section>
+    </main>
+
+    <!-- Sticky contact bar (mobile only) -->
+    <div class="mobile-contact-bar" role="navigation" aria-label="יצירת קשר מהירה">
+        <a href="tel:+972552486198"><span aria-hidden="true">📞</span> התקשרו</a>
+        <a href="https://wa.me/972552486198?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A1%D7%99%D7%95%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5."
+            target="_blank" rel="noopener"><span aria-hidden="true">💬</span> וואטסאפ</a>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 סיון גילאור - עובדת סוציאלית. כל הזכויות שמורות.</p>
+        <p>&copy; 2026 סיון גילאור - עובדת סוציאלית. כל הזכויות שמורות. <a href="privacy.html">מדיניות פרטיות</a></p>
     </footer>
     <script src="script.js"></script>
 </body>
